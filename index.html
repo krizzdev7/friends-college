@@ -1,0 +1,262 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Friends College</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #002147;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #002147;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      max-width: 80px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-style: italic;
+      font-size: 28px;
+      margin: 5px 0;
+    }
+
+    nav {
+      background-color: #00162e;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .intro, .about, .info, .lab-facilities, .top-performers, .contact {
+      padding: 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .about p,
+    .info ul li {
+      font-style: italic;
+    }
+
+    .info {
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .info h2, .lab-facilities h2, .top-performers h2, .contact h2 {
+      color: #002147;
+    }
+
+    .info ul {
+      list-style-type: none;
+      padding-left: 0;
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .info ul li::before {
+      content: "⭐ ";
+      margin-right: 6px;
+      color: #002147;
+    }
+
+    .lab-facilities img,
+    .top-performers img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .contact a {
+      display: inline-block;
+      background-color: #002147;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 5px;
+      transition: background 0.3s;
+    }
+
+    .contact a:hover {
+      background-color: #00162e;
+    }
+
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* ---------- MOBILE RESPONSIVE STYLES ---------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      header p {
+        font-size: 14px;
+      }
+
+      nav {
+        padding: 5px;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .info ul {
+        padding: 0 15px;
+      }
+
+      .info h2,
+      .lab-facilities h2,
+      .top-performers h2,
+      .contact h2 {
+        font-size: 20px;
+      }
+
+      .contact a {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+      }
+
+      .lab-facilities img,
+      .top-performers img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo_new.png.jpg" alt="Logo" />
+    <h1>FRIENDS COLLEGE</h1>
+    <p>COLLEGE OF SCIENCE AND COMMERCE</p>   
+    <p>Vallicode, Kochalumoodu, Pathanamthitta, Kerala</p>
+    <p>9495465808</p>
+  </header>
+
+  <nav>
+    <a href="#intro">Home</a>
+    <a href="#about">About</a>
+    <a href="#info">Courses & Facilities</a>
+    <a href="#top">Top Performers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="intro" id="intro">
+    <h2>Welcome to Friends College</h2>
+    <p>Empowering students for 38 years with excellence in education.</p>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>We offer expert coaching for students from Class 1 to 12 in State, CBSE, and ICSE syllabus. Science and Commerce streams available with lab practicals and computer training.</p>
+  </section>
+
+  <section class="info" id="info">
+    <h2>Courses & Facilities</h2>
+    <ul>
+      <li>All subjects for Classes 1 to 12</li>
+      <li>Separate batches for State, CBSE, and ICSE students</li>
+      <li>Science Lab Practical Sessions (Chemistry, Physics, Biology)</li>
+      <li>Computer Lab for all students</li>
+      <li>Science stream with Maths, Biology, Chemistry, Physics, Computer/IP, Languages</li>
+      <li>Commerce stream with Accountancy, Business Studies, Economics, etc.</li>
+    </ul>
+  </section>
+
+  <section class="lab-facilities" id="lab">
+    <h2>Lab Facility Pictures</h2>
+    <img src="lab1.jpg.jpg" alt="Science Lab" />
+    <img src="lab2.jpg.jpg" alt="Computer Lab" />
+    <img src="lab3.jpg.jpg" alt="Science Lab" />
+    <img src="lab4.jpg.jpg" alt="Computer Lab" />
+    <img src="lab5.jpg.jpg" alt="Chemistry Lab" />
+    <img src="lab6.jpg.jpg" alt="Science Lab" />
+    <img src="lab7.jpg.jpg" alt="Science Lab" />
+    <img src="lab8.jpg.jpg" alt="Computer Lab" />
+    <img src="lab9.jpg.jpg" alt="Chemistry Lab" />
+    <img src="lab10.jpg.jpg" alt="Physics Lab" />
+    <img src="lab11.jpg.jpg" alt="Biology Lab" />
+    <img src="lab12.jpg.jpg" alt="Science Lab" />
+    <img src="lab13.jpg.jpg" alt="Computer Lab" />
+    <img src="lab14.jpg.jpg" alt="Chemistry Lab" />
+    <img src="lab15.jpg.jpg" alt="Science Lab" />
+    <img src="lab16.jpg.jpg" alt="Computer Lab" />
+    <img src="lab17.jpg.jpg" alt="Science Lab" />
+    <img src="lab18.jpg.jpg" alt="Computer Lab" />
+    <img src="lab19.jpg.jpg" alt="Chemistry Lab" />
+    <img src="lab20.jpg.jpg" alt="Science Lab" />
+    <img src="lab21.jpg.jpg" alt="Science Lab" />
+    <img src="lab22.jpg.jpg" alt="Computer Lab" />
+    <img src="lab23.jpg.jpg" alt="Chemistry Lab" />
+    <img src="lab24.jpg.jpg" alt="Science Lab" />
+  </section>
+
+  <section class="top-performers" id="top">
+    <h2>Top Performers</h2>
+    <img src="top_students25.jpg.jpg" alt="Top Scorers of the Year">
+    <img src="top_students24.jpg.png" alt="Top Scorers of the Year">
+    <img src="top_students22.jpg.png" alt="Top Scorers of the Year">
+    <img src="top_students21.jpg.png" alt="Top Scorers of the Year">
+    <img src="top_students18,jpg.jpg" alt="Top Scorers of the Year">
+    <img src="top_students15.jpg.png" alt="Top Scorers of the Year">
+    <img src="top_students.jpg.png" alt="Top Scorers of the Year"> 
+    <img src="top_students8.jpg.jpg" alt="Top Scorers of the Year"> 
+    <img src="top_students9.jpg.png" alt="Top Scorers of the Year"> 
+  </section>  
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Click to Call:</p>
+    <a href="tel:+919495465808">Call: 9495465808</a>
+    <a href="tel:+919495360415">Call: 9495360415</a>
+    <p style="margin-top: 20px;">📍 <a href="https://maps.app.goo.gl/29wDvCBHBX7ihimz7?g_st=aw" target="_blank" style="color:white;">View Location on Google Maps</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Friends College. All rights reserved.
+  </footer>
+
+</body>
+</html>
+
