@@ -1,3 +1,4 @@
+
 <!DOCTYPE html> 
 <html lang="en">
 <head>
@@ -39,14 +40,16 @@
 
     nav {
       background-color: #00162e;
-      text-align: center;
+       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
       padding: 10px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
     }
 
@@ -89,13 +92,27 @@
       color: #002147;
     }
 
+    .lab-facilities .grid,
+    .top-performers .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
     .lab-facilities img,
     .top-performers img {
-      max-width: 90%;
+      width: 100%;
       height: auto;
       border-radius: 10px;
-      margin: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .lab-facilities img:hover,
+    .top-performers img:hover {
+      transform: scale(1.05);
     }
 
     .contact a {
@@ -121,7 +138,39 @@
       margin-top: 30px;
     }
 
-    /* ---------- MOBILE RESPONSIVE STYLES ---------- */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 22px;
@@ -166,97 +215,110 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo_new.png.jpg" alt="Logo" />
-    <h1>FRIENDS COLLEGE</h1>
-    <p>COLLEGE OF SCIENCE AND COMMERCE</p>   
-    <p>Vallicode, Kochalumoodu, Pathanamthitta, Kerala</p>
-    <p>9495465808</p>
-  </header>
+<header>
+  <img src="logo_new.png.jpg" alt="Logo" />
+  <h1>FRIENDS COLLEGE</h1>
+  <p>COLLEGE OF SCIENCE AND COMMERCE</p>   
+  <p>Vallicode, Kochalumoodu, Pathanamthitta, Kerala</p>
+  <p>9495465808</p>
+</header>
 
-  <nav>
-    <a href="#intro">Home</a>
-    <a href="#about">About</a>
-    <a href="#info">Courses & Facilities</a>
-    <a href="#top">Top Performers</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+  <a href="#intro">Home</a>
+  <a href="#about">About</a>
+  <a href="#info">Courses & Facilities</a>
+  <a href="#top">Top Performers</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <section class="intro" id="intro">
-    <h2>Welcome to Friends College</h2>
-    <p>Empowering students for 38 years with excellence in education.</p>
-  </section>
+<section class="intro" id="intro">
+  <h2>Welcome to Friends College</h2>
+  <p>Empowering students for 38 years with excellence in education.</p>
+</section>
 
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>We offer expert coaching for students from Class 1 to 12 in State, CBSE, and ICSE syllabus. Science and Commerce streams available with lab practicals and computer training.</p>
-  </section>
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>We offer expert coaching for students from Class 1 to 12 in State, CBSE, and ICSE syllabus. Science and Commerce streams available with lab practicals and computer training.</p>
+</section>
 
-  <section class="info" id="info">
-    <h2>Courses & Facilities</h2>
-    <ul>
-      <li>All subjects for Classes 1 to 12</li>
-      <li>Separate batches for State, CBSE, and ICSE students</li>
-      <li>Science Lab Practical Sessions (Chemistry, Physics, Biology)</li>
-      <li>Computer Lab for all students</li>
-      <li>Science stream with Maths, Biology, Chemistry, Physics, Computer/IP, Languages</li>
-      <li>Commerce stream with Accountancy, Business Studies, Economics, etc.</li>
-    </ul>
-  </section>
+<section class="info" id="info">
+  <h2>Courses & Facilities</h2>
+  <ul>
+    <li>All subjects for Classes 1 to 12</li>
+    <li>Separate batches for State, CBSE, and ICSE students</li>
+    <li>Science Lab Practical Sessions (Chemistry, Physics, Biology)</li>
+    <li>Computer Lab for all students</li>
+    <li>Science stream with Maths, Biology, Chemistry, Physics, Computer/IP, Languages</li>
+    <li>Commerce stream with Accountancy, Business Studies, Economics, etc.</li>
+  </ul>
+</section>
 
-  <section class="lab-facilities" id="lab">
-    <h2>Lab Facility Pictures</h2>
-    <img src="lab1.jpg.jpg" alt="Science Lab" />
-    <img src="lab2.jpg.jpg" alt="Computer Lab" />
-    <img src="lab3.jpg.jpg" alt="Science Lab" />
-    <img src="lab4.jpg.jpg" alt="Computer Lab" />
-    <img src="lab5.jpg.jpg" alt="Chemistry Lab" />
-    <img src="lab6.jpg.jpg" alt="Science Lab" />
-    <img src="lab7.jpg.jpg" alt="Science Lab" />
-    <img src="lab8.jpg.jpg" alt="Computer Lab" />
-    <img src="lab9.jpg.jpg" alt="Chemistry Lab" />
-    <img src="lab10.jpg.jpg" alt="Physics Lab" />
-    <img src="lab11.jpg.jpg" alt="Biology Lab" />
-    <img src="lab12.jpg.jpg" alt="Science Lab" />
-    <img src="lab13.jpg.jpg" alt="Computer Lab" />
-    <img src="lab14.jpg.jpg" alt="Chemistry Lab" />
-    <img src="lab15.jpg.jpg" alt="Science Lab" />
-    <img src="lab16.jpg.jpg" alt="Computer Lab" />
-    <img src="lab17.jpg.jpg" alt="Science Lab" />
-    <img src="lab18.jpg.jpg" alt="Computer Lab" />
-    <img src="lab19.jpg.jpg" alt="Chemistry Lab" />
-    <img src="lab20.jpg.jpg" alt="Science Lab" />
-    <img src="lab21.jpg.jpg" alt="Science Lab" />
-    <img src="lab22.jpg.jpg" alt="Computer Lab" />
-    <img src="lab23.jpg.jpg" alt="Chemistry Lab" />
-    <img src="lab24.jpg.jpg" alt="Science Lab" />
-  </section>
+<section class="lab-facilities" id="lab">
+  <h2>Lab Facility Pictures</h2>
+  <div class="grid">
+    <!-- Each image wrapped with anchor to activate lightbox -->
+    <a href="#lab1"><img src="lab1.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab2"><img src="lab2.jpg.jpg" alt="Computer Lab" /></a>
+    <a href="#lab3"><img src="lab3.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab4"><img src="lab4.jpg.jpg" alt="Computer Lab" /></a>
+    <a href="#lab5"><img src="lab5.jpg.jpg" alt="Chemistry Lab" /></a>
+    <a href="#lab6"><img src="lab6.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab7"><img src="lab7.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab8"><img src="lab8.jpg.jpg" alt="Computer Lab" /></a>
+    <a href="#lab9"><img src="lab9.jpg.jpg" alt="Chemistry Lab" /></a>
+    <a href="#lab10"><img src="lab10.jpg.jpg" alt="Physics Lab" /></a>
+    <a href="#lab11"><img src="lab11.jpg.jpg" alt="Biology Lab" /></a>
+    <a href="#lab12"><img src="lab12.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab13"><img src="lab13.jpg.jpg" alt="Computer Lab" /></a>
+    <a href="#lab14"><img src="lab14.jpg.jpg" alt="Chemistry Lab" /></a>
+    <a href="#lab15"><img src="lab15.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab16"><img src="lab16.jpg.jpg" alt="Computer Lab" /></a>
+    <a href="#lab17"><img src="lab17.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab18"><img src="lab18.jpg.jpg" alt="Computer Lab" /></a>
+    <a href="#lab19"><img src="lab19.jpg.jpg" alt="Chemistry Lab" /></a>
+    <a href="#lab20"><img src="lab20.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab21"><img src="lab21.jpg.jpg" alt="Science Lab" /></a>
+    <a href="#lab22"><img src="lab22.jpg.jpg" alt="Computer Lab" /></a>
+    <a href="#lab23"><img src="lab23.jpg.jpg" alt="Chemistry Lab" /></a>
+    <a href="#lab24"><img src="lab24.jpg.jpg" alt="Science Lab" /></a>
+  </div>
+</section>
 
-  <section class="top-performers" id="top">
-    <h2>Top Performers</h2>
-    <img src="top_students25.jpg.jpg" alt="Top Scorers of the Year">
-    <img src="top_students24.jpg.png" alt="Top Scorers of the Year">
-    <img src="top_students22.jpg.png" alt="Top Scorers of the Year">
-    <img src="top_students21.jpg.png" alt="Top Scorers of the Year">
-    <img src="top_students18,jpg.jpg" alt="Top Scorers of the Year">
-    <img src="top_students15.jpg.png" alt="Top Scorers of the Year">
-    <img src="top_students.jpg.png" alt="Top Scorers of the Year"> 
-    <img src="top_students8.jpg.jpg" alt="Top Scorers of the Year"> 
-    <img src="top_students9.jpg.png" alt="Top Scorers of the Year"> 
-  </section>  
+<section class="top-performers" id="top">
+  <h2>Top Performers</h2>
+  <div class="grid">
+    <a href="#top1"><img src="top_students25.jpg.jpg" alt="Top Scorers of the Year"></a>
+    <a href="#top2"><img src="top_students24.jpg.png" alt="Top Scorers of the Year"></a>
+    <a href="#top3"><img src="top_students22.jpg.png" alt="Top Scorers of the Year"></a>
+    <a href="#top4"><img src="top_students21.jpg.png" alt="Top Scorers of the Year"></a>
+    <a href="#top5"><img src="top_students18,jpg.jpg" alt="Top Scorers of the Year"></a>
+    <a href="#top6"><img src="top_students15.jpg.png" alt="Top Scorers of the Year"></a>
+    <a href="#top7"><img src="top_students.jpg.png" alt="Top Scorers of the Year"></a>
+    <a href="#top8"><img src="top_students8.jpg.jpg" alt="Top Scorers of the Year"></a>
+    <a href="#top9"><img src="top_students9.jpg.png" alt="Top Scorers of the Year"></a>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Click to Call:</p>
-    <a href="tel:+919495465808">Call: 9495465808</a>
-    <a href="tel:+919495360415">Call: 9495360415</a>
-    <p style="margin-top: 20px;">📍 <a href="https://maps.app.goo.gl/29wDvCBHBX7ihimz7?g_st=aw" target="_blank" style="color:white;">View Location on Google Maps</a></p>
-  </section>
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Click to Call:</p>
+  <a href="tel:+919495465808">Call: 9495465808</a>
+  <a href="tel:+919495360415">Call: 9495360415</a>
+  <p style="margin-top: 20px;">📍 <a href="https://maps.app.goo.gl/29wDvCBHBX7ihimz7?g_st=aw" target="_blank" style="color:white;">View Location on Google Maps</a></p>
+</section>
 
-  <footer>
-    &copy; 2025 Friends College. All rights reserved.
-  </footer>
+<footer>
+  &copy; 2025 Friends College. All rights reserved.
+</footer>
+
+<!-- Lightbox popups (you can copy & duplicate this block for each image) -->
+<div id="lab1" class="lightbox"><a href="#" class="close">&times;</a><img src="lab1.jpg.jpg"></div>
+<div id="lab2" class="lightbox"><a href="#" class="close">&times;</a><img src="lab2.jpg.jpg"></div>
+<div id="lab3" class="lightbox"><a href="#" class="close">&times;</a><img src="lab3.jpg.jpg"></div>
+<!-- Repeat for lab4 to lab24 -->
+<div id="top1" class="lightbox"><a href="#" class="close">&times;</a><img src="top_students25.jpg.jpg"></div>
+<div id="top2" class="lightbox"><a href="#" class="close">&times;</a><img src="top_students24.jpg.png"></div>
+<!-- Repeat for other top performer images -->
 
 </body>
 </html>
-
